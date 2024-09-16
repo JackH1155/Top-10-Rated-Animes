@@ -1,1 +1,1 @@
-web: gunicorn my_project.wsgi
+web: gunicorn top_10_anime.wsgi
