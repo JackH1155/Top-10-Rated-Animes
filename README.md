@@ -1,131 +1,233 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Top 10 Anime</h1>
 
-Welcome Jack Hunt,
+[View the live project here]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The Wayfarers project contains an application called Top 10 Anime which is a website that gives details on the top 10 rated anime of all time.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+The admin user of the site can manage comments to keep the website a respectable and harmfree place
 
-## Gitpod Reminders
+![Mockup](documentation/supp-images/amiresponsive.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Index – Table of Contents
+* [User Experience (UX)](#user-experience-ux) 
+* [Features](#features)
+* [Design](#design)
+* [Planning](#planning)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
-`python3 -m http.server`
+## User Experience (UX)
 
-A blue button should appear to click: _Make Public_,
+### User stories :
 
-Another blue button should appear to click: _Open Browser_.
+* US01: View Top 10 Rated Anime
+  - As a visitor, I want to view a list of the top 10 rated anime, with their ratings, genres, and images, so I can easily find out about the best anime
+* US02: View Details page
+  - As a visitor, I want to click on an anime title to view more detailed information such as the plot, characters, release date, and predefined ratings.
+* US03: User sign-up
+  -As a new user, I want to create an account with my email and password, so I can leave comments and like/dislike anime or comments.
+* US04: User login
+  - As a returning user, I want to log in to my account, so I can interact with the content (comment, like/dislike).
+* US05: Admin panel
+  - As an admin, I want to manage user accounts and interactions, so I can moderate content for the website.
+* US06: Admin comment management
+  - As an admin, I want to moderate user comments and delete inappropriate or harmful content, so I can ensure the site remains a positive space.
+* US07: Add comments
+  - As a logged-in user, I want to comment on my favorite anime from the list, so I can share my thoughts with other fans.
+* US08: Like/Dislike Anime
+  - As a logged-in user, I want to like or dislike an anime and other users' comments, so I can engage with the community.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Features
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Existing Features
 
-To log into the Heroku toolbelt CLI:
+-   __F01 Navigation Bar__
+    
+    The navigation bar has a consistent look and placement each page supporting easy and intuitive navigation.  It includes a Logo, and a link to the Home page. If the user is not signed in then links are available to the Sign-up page.  If a user is signed in then the links available, in addition to the Home link, are for  and Sign out; and the active username and a user icon are also displayed.
+    
+    If the user signed in is the admin user then an additional link of Admin is also shown on the navigation bar.  This link takes the user to the Django Admin screens where data in the underlying database can be added, retrieved, modified and deleted.
+    
+    The navigation bar is responsive on multiple screen sizes - on smaller screens it coverts to a 'burger' menu style.  
+    
+    ![Navbar Full]()
+    ![Navbar Full Signed in]()
+    ![Navbar Burger]()
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+-   __F02 Landing page image and text__
+    
+    At the top of the landing page (home page) there is an area that includes a photograph and a text overlay which together clearly identify the purpose of the site as a place to find and book guided hikes in Banff.  
 
-### Connecting your Mongo database
+    ![Landing Area]()
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+    
 
-------
+    
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    ![ Detail]()
 
-**June 18, 2024,** Add Mongo back into template
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
 
-**May 28 2024:** Fix Mongo and Links installs
+    ![Comment]()
 
-**April 26 2024:** Update node version to 16
 
-**September 20 2023:** Update Python version to 3.9.17.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+    ![Like]()
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+-   __F10 User authentication__
+    
+    The application provides the following user authentication related functions :
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+    - User Registration
+      - A user needs to be registered before they can sign in.  The option to Register appears on the navigation bar when no user is currently signed in.  To Register, the user needs to provide a) a username which has not already been registered, b) an optional email address (if this is provided then it needs to be an email address that is not already registered) and c) a password which they must enter twice.  Once registered a user can sign in.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+        ![Register User]()
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+    - User Sign in
+      - Once registered a user can sign in and will have access to extra functionality, namely :
+        - can comment on a anime
+        - can like a anime
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+      - To sign in the user must provide a) a registered username and b) the password for the username
+     
+        ![Sign in User]()
+      
+    - User Sign out
+      - A signed in user can sign out by clicking on the Sign out link on the navigation bar.  The user simply needs to confirm the action by clicking on the Sign out button on the page.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+        ![Sign out User]()
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Features which could be implemented in the future
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+## Design
 
-## FAQ about the uptime script
+-   ### Wireframes
 
-**Why have you added this script?**
+    The wireframe diagrams below describe the Home, Login, Logout and Sign-up pages.
+    <details>
+    <summary>Desktop Wireframes</summary>
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+    ![Desktop Wireframes]()
+    </details>
+    <details>
+    <summary>Tablet Wireframes</summary>
 
-**How will this affect me?**
+    ![Tablet Wireframes]()
+    </details>
+    <details>
+    <summary>Smartphone Wireframes</summary>
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+    ![Smartphone Wireframes]()
+    </details>
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Planning
 
-**So….?**
+A GitHub Project with linked Issues was used as the Agile tool for this project.  User Stories with acceptance criteria were defined using GitHub Issues and development of code for these stories was managed using a Kanban board.  All of the User Stories were linked to a 'parent' Epic issue to show how they all supported the over-arching goal of the project.  The acceptance criteria were tested as each story moved to 'Done' and were also included in the final pre-submission manual testing documented in the Testing section of this README.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+The Epic, User Stories and Kanban board can be accessed here : [)
 
-**Can I opt out?**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Technologies Used
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Languages Used
 
-**Anything more?**
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [Python](https://www.python.org/)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Frameworks, Libraries & Programs Used
 
----
 
-Happy coding!
+## Testing
+
+### Validator Testing 
+
+
+
+### Browser Compatibility
+
+- Chrome DevTools was used to test the responsiveness of the application on different screen sizes.  In addition, testing has been carried out on the following browsers :
+    - Google Chrome version
+    - Firefox version 93.0
+    - Microsoft Edge
+ 
+    
+
+### Known bugs
+
+- Currently no known bugs.
+
+## Deployment
+
+Detailed below are instructions on how to clone this project repository and the steps to configure and deploy the application.  Code Institute also provides a summary of similar process steps here : [CI Cheat Sheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+
+1. How to Clone the Repository
+2. Create Application and Postgres DB on Heroku
+3. Configure Cloudinary to host images used by the application
+4. Connect the Heroku app to the GitHub repository
+5. Executing automated tests
+6. Final Deployment steps
+
+
+### Create Application and Postgres DB on Heroku
+- Log in to Heroku at https://heroku.com - create an account if needed.
+- From the Heroku dashboard, click the Create new app button.  For a new account an icon will be visible on screen to allow you to Create an app, otherwise a link to this function is located under the New dropdown menu at the top right of the screen.
+- On the Create New App page, enter a unique name for the application and select region.  Then click Create app.
+- On the Application Configuration page for the new app, click on the Resources tab.
+- In the Add-ons search bar enter "Postgres" and select "Heroku Postgres" from the list - click the "Submit Order Form" button on the pop-up dialog.
+- Next, click on Settings on the Application Configuration page and click on the "Reveal Config Vars" button - check the DATABASE_URL has been automatically set up. 
+- Add a new Config Var called DISABLE_COLLECTSTATIC and assign it a value of 1.
+- Add a new Config Var called SECRET_KEY and assign it a value - any random string of letters, digits and symbols.
+- The settings.py file should be updated to use the DATABASE_URL and SECRET_KEY environment variable values as follows :
+
+  - DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
+  - SECRET_KEY = os.environ.get('SECRET_KEY')
+
+- In Gitpod, in the project terminal window, to initialize the data model in the postgres database, run the command : python3 manage.py migrate 
+- Make sure the project requirements.txt file is up to date with all necessary supporting files by entering the command : pip3 freeze --local > requirements.txt
+- Commit and push any local changes to GitHub.
+- In order to be able to run the application on localhost, add SECRECT_KEY and DATABASE_URL and their values to env.py
+
+
+### Connect the Heroku app to the GitHub repository
+- Go to the Application Configuration page for the application on Heroku and click on the Deploy tab.
+- Select GitHub as the Deployment Method and if prompted, confirm that you want to connect to GitHub. Enter the name of the github repository (the one used for this project is (https://github.com/elainebroche-dev/pf4-wayfarers-guided-hikes) and click on Connect to link up the Heroku app to the GitHub repository code.
+- Scroll down the page and choose to either Automatically Deploy each time changes are pushed to GitHub, or Manually deploy - for this project Manual Deploy was selected.
+- The application can be run from the Application Configuration page by clicking on the Open App button.
+- The live link for this project is ()
+
+
+### Final Deployment steps
+
+
+#### The live link to the application can be found here - [) 
+
+
+## Credits 
+
+### Code 
+
+
+### Content 
+
+
+### Media 
+
+  
+  
+### Acknowledgments
+
+
