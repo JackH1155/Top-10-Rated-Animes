@@ -41,9 +41,11 @@ body {
 .image-flash {
     position: absolute;
     bottom: 5%;
-    min-width: 30%;
+    min-width: 10%;
     left: -2px;
     background-color: #188181;
+    text-align: center;
+    border-radius: 40px;
 }
 
 .scale {
@@ -51,10 +53,10 @@ body {
     height: auto;
 }
 
-.author {
+.rating {
     color: white;
+    font-size: 2rem;
     margin: 4px;
-    text-transform: uppercase;
 }
 
 .masthead {
@@ -158,4 +160,12 @@ body {
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+.row {
+    margin: 2% 5%;
+}
+
+.card-body {
+
 }

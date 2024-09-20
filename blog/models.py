@@ -11,17 +11,18 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
+    rating = models.IntegerField(choices=[(i, i) for i in range(1, 13)], default=1)
     content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.CharField(max_length=200, default="Custom date string")
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
-    updated_on = models.DateTimeField(auto_now=True)
+    updated_on = models.CharField(max_length=200, blank=True, null=True)
 
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ["rating"]
 
     def __str__(self):
-        return f"{self.title} | written by {self.author}"
+        return f"{self.title} | Rating: {self.rating}/12"
 
 
 class Comment(models.Model):
