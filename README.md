@@ -1,8 +1,8 @@
-<h1 align="center">Top 10 Anime</h1>
+<h1 align="center">Top 12 Anime</h1>
 
 [View the live project here]()
 
-The Wayfarers project contains an application called Top 10 Anime which is a website that gives details on the top 10 rated anime of all time.
+The project contains an application called Top 10 Anime which is a website that gives details on the top 12 rated anime of all time.
 
 The admin user of the site can manage comments to keep the website a respectable and harmfree place
 
@@ -118,17 +118,23 @@ The admin user of the site can manage comments to keep the website a respectable
     <details>
     <summary>Desktop Wireframes</summary>
 
-    ![Desktop Wireframes]()
+    ![Desktop Wireframes](documentation/wireframes/homepage_desktop.png)
+    ![Desktop Wireframes](documentation/wireframes/detailspage_desktop.png)
+    ![Desktop Wireframes](documentation/wireframes/userbiopage_desktop.png)
     </details>
     <details>
     <summary>Tablet Wireframes</summary>
 
-    ![Tablet Wireframes]()
+    ![Tablet Wireframes](documentation/wireframes/homepage_tablet.png)
+    ![Tablet Wireframes](documentation/wireframes/detailspage_tablet.png)
+    ![Tablet Wireframes](documentation/wireframes/userbiopage_tablet.png)
     </details>
     <details>
     <summary>Smartphone Wireframes</summary>
 
-    ![Smartphone Wireframes]()
+    ![Smartphone Wireframes](documentation/wireframes/homepage_mobile.png)
+    ![Smartphone Wireframes](documentation/wireframes/detailspage_mobile.png)
+    ![Smartphone Wireframes](documentation/wireframes/huserbiopage_mobile.png)
     </details>
 
 
@@ -204,7 +210,7 @@ Detailed below are instructions on how to clone this project repository and the 
 
 ### Connect the Heroku app to the GitHub repository
 - Go to the Application Configuration page for the application on Heroku and click on the Deploy tab.
-- Select GitHub as the Deployment Method and if prompted, confirm that you want to connect to GitHub. Enter the name of the github repository (the one used for this project is (https://github.com/elainebroche-dev/pf4-wayfarers-guided-hikes) and click on Connect to link up the Heroku app to the GitHub repository code.
+- Select GitHub as the Deployment Method and if prompted, confirm that you want to connect to GitHub. Enter the name of the github repository (the one used for this project is () and click on Connect to link up the Heroku app to the GitHub repository code.
 - Scroll down the page and choose to either Automatically Deploy each time changes are pushed to GitHub, or Manually deploy - for this project Manual Deploy was selected.
 - The application can be run from the Application Configuration page by clicking on the Open App button.
 - The live link for this project is ()
@@ -217,6 +223,7 @@ Detailed below are instructions on how to clone this project repository and the 
 
 
 ## Credits 
+Used this README https://github.com/elainebroche-dev/pf4-wayfarers-guided-hikes/blob/main/README.md as a base skeleton for my README.
 
 ### Code 
 
