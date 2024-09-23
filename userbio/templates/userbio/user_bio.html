@@ -1,0 +1,25 @@
+<div class="user-profile"></div>
+    <h2>{{ user.username }}'s Profile</h2>
+
+    <!-- Profile Picture -->
+    {% if user.bio.profile_picture %}
+    <img src="{{ user.bio.profile_picture.url }}" alt="Profile Picture" style="width:150px; height:150px;">
+    {% endif %}
+
+    <!-- Info -->
+    {% if user.bio.date_of_birth %}
+    <p><strong>Date of Birth:</strong> {{ user.bio.date_of_birth }}</p>
+    {% endif %}
+    
+    {% if user.bio.country %}
+    <p><strong>Country:</strong> {{ user.bio.country }}</p>
+    {% endif %}
+    
+    {% if user.bio.fav_anime %}
+    <p><strong>Favourite Anime:</strong> {{ user.bio.fav_anime }}</p>
+    {% endif %}
+
+    <!-- Bio -->
+    <p>{{ user.bio.bio }}</p>
+
+</div>
