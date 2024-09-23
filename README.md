@@ -134,7 +134,7 @@ The admin user of the site can manage comments to keep the website a respectable
 
     ![Smartphone Wireframes](documentation/wireframes/homepage_mobile.png)
     ![Smartphone Wireframes](documentation/wireframes/detailspage_mobile.png)
-    ![Smartphone Wireframes](documentation/wireframes/huserbiopage_mobile.png)
+    ![Smartphone Wireframes](documentation/wireframes/userbiopage_mobile.png)
     </details>
 
 
