@@ -22,6 +22,7 @@ from userbio import views
 
 urlpatterns = [
     path('', include("blog.urls"), name='blog-urls'),
+    path("accounts/", include("allauth.urls")),
     path('summernote/', include('django_summernote.urls')),
     path('bio/<str:username>/', views.user_bio_view, name='user_bio'),
     path('admin/', admin.site.urls),
