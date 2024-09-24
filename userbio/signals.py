@@ -10,4 +10,5 @@ def create_user_bio(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=User)
 def save_user_bio(sender, instance, **kwargs):
-    instance.bio.save()
+    if hasattr(instance, 'userbio'):  # Check if UserBio exists for this user
+        instance.userbio.save()

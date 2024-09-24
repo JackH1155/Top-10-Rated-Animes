@@ -1,4 +1,11 @@
-<div class="user-profile"></div>
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ user.username }}'s Profile
+{% endblock %}
+
+{% block content %}
+<div class="user-profile">
     <h2>{{ user.username }}'s Profile</h2>
 
     <!-- Profile Picture -->
@@ -10,16 +17,16 @@
     {% if user.bio.date_of_birth %}
     <p><strong>Date of Birth:</strong> {{ user.bio.date_of_birth }}</p>
     {% endif %}
-    
+
     {% if user.bio.country %}
     <p><strong>Country:</strong> {{ user.bio.country }}</p>
     {% endif %}
-    
+
     {% if user.bio.fav_anime %}
     <p><strong>Favourite Anime:</strong> {{ user.bio.fav_anime }}</p>
     {% endif %}
 
     <!-- Bio -->
     <p>{{ user.bio.bio }}</p>
-
 </div>
+{% endblock %}
