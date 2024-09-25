@@ -74,9 +74,9 @@
     <main class="flex-shrink-0 main-bg">
 
         {% if user.is_authenticated %}
-            <p>You are logged in as {{ user.username }}.</p>
+        <p class="text-end m-3">You are logged in as {{ user }}</p>
         {% else %}
-            <p>You are not logged in.</p>
+        <p class="text-end m-3">You are not logged in</p>
         {% endif %}
 
         {% block content %}
@@ -91,11 +91,6 @@
             {% block copyright %}
                 Made by Jack
             {% endblock copyright %}
-        </p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i>
         </p>
     </footer>
 

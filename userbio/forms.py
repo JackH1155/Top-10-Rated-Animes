@@ -45,3 +45,13 @@ class CustomSignupForm(SignupForm):
             bio=self.cleaned_data.get('bio')
         )
         return user
+
+
+class UserBioForm(forms.ModelForm):
+    class Meta:
+        model = UserBio
+        fields = ['date_of_birth', 'country', 'fav_anime', 'bio']
+        widgets = {
+            'date_of_birth': forms.SelectDateWidget(years=range(1900, 2025)),
+            'bio': forms.Textarea(attrs={'rows': 4, 'cols': 40}),
+        }

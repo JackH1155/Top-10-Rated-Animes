@@ -234,3 +234,55 @@ button.btn-primary:hover {
     background-color: #fff;
     color: #23BBBB;  
 }
+
+
+/* User Bio */
+
+.user-profile {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin: auto;
+    display: flex;
+    border: 2px solid #188181;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    width: 20%;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    width: 40%;
+}
+
+.user-profile h2 {
+    font-size: 3rem;
+}
+
+.profile-picture img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 30px 0;
+}
+
+.title {
+    margin: 10px 0 2px 0;
+    font-size: 1.5rem;
+}
+
+.text {
+    border: 2px solid #188181;
+    background-color: #dadada;
+}
+
+.bio {
+    height: 100px;
+}
