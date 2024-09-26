@@ -34,6 +34,14 @@ class CustomSignupForm(SignupForm):
         required=False
     )
 
+    profile_picture = forms.ImageField(
+        required=False,
+        widget=forms.ClearableFileInput(attrs={
+            'class': 'form-control-file',
+            'accept': 'image/*',
+        })
+    )
+
     def save(self, request):
         user = super(CustomSignupForm, self).save(request)
         # Save UserBio data
@@ -42,7 +50,8 @@ class CustomSignupForm(SignupForm):
             date_of_birth=self.cleaned_data.get('date_of_birth'),
             country=self.cleaned_data.get('country'),
             fav_anime=self.cleaned_data.get('fav_anime'),
-            bio=self.cleaned_data.get('bio')
+            bio=self.cleaned_data.get('bio'),
+            profile_picture=self.cleaned_data.get('profile_picture')
         )
         return user
 
@@ -50,7 +59,7 @@ class CustomSignupForm(SignupForm):
 class UserBioForm(forms.ModelForm):
     class Meta:
         model = UserBio
-        fields = ['date_of_birth', 'country', 'fav_anime', 'bio']
+        fields = ['profile_picture', 'date_of_birth', 'country', 'fav_anime', 'bio']
         widgets = {
             'date_of_birth': forms.SelectDateWidget(years=range(1900, 2025)),
             'bio': forms.Textarea(attrs={'rows': 4, 'cols': 40}),

@@ -1,13 +1,56 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="form-container">
+<div class="container">
   <h1>Edit Your Bio</h1>
 
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">  <!-- Added enctype for file uploads -->
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save Changes</button>
+
+    <div class="mb-3">
+      <label for="id_profile_picture" class="form-label">Profile Picture</label>
+      
+      <!-- Display the uploaded profile picture or a placeholder if no picture is available -->
+      <div class="profile-picture-preview">
+        {% if user.userbio.profile_picture %}
+          <!-- Display the user's current profile picture -->
+          <img src="{{ user.userbio.profile_picture.url }}" alt="Profile Picture" style="width:150px;height:150px;object-fit:cover;">
+        {% else %}
+          <!-- Display the placeholder image from media/profile_pics/nobody.jpg -->
+          <img src="{{ MEDIA_URL }}profile_pics/nobody.jpg" alt="Placeholder Picture" style="width:150px;height:150px;object-fit:cover;">
+        {% endif %}
+      </div>
+    
+      <!-- Input field for uploading a new profile picture -->
+      {{ form.profile_picture }}
+    
+      <!-- Optionally add a button to remove the profile picture -->
+      {% if user.userbio.profile_picture %}
+        <button type="submit" name="remove_picture" value="1" class="btn btn-danger mt-2">Remove Picture</button>
+      {% endif %}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_date_of_birth" class="form-label">Date of Birth</label>
+      {{ form.date_of_birth }}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_country" class="form-label">Country</label>
+      {{ form.country }}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_fav_anime" class="form-label">Favourite Anime</label>
+      {{ form.fav_anime }}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_bio" class="form-label">Bio</label>
+      {{ form.bio }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
   </form>
 </div>
 {% endblock %}

@@ -79,7 +79,7 @@ ROOT_URLCONF = 'top_10_anime.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR, 'userbio', 'templates'],
+        'DIRS': [TEMPLATES_DIR, 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

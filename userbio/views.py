@@ -20,7 +20,7 @@ def edit_user_bio(request):
 
     # Handle form submission
     if request.method == 'POST':
-        form = UserBioForm(request.POST, instance=user_bio)
+        form = UserBioForm(request.POST, request.FILES, instance=user_bio)
         if form.is_valid():
             form.save()
             return redirect('user_bio', username=request.user.username) 
