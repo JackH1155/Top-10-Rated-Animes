@@ -1,10 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class UserBio(models.Model):
-    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
+    profile_picture = CloudinaryField('image', default='profile_pics/nobody.jpg')
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='bio')
     date_of_birth = models.DateField(null=True, blank=True)
     country = CountryField(blank_label='(select country)', default='US')

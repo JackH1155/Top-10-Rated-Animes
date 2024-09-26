@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    {{ user.username }}'s Profile
+{{ user.username }}'s Profile
 {% endblock %}
 
 {% block content %}
 <div class="user-profile">
-    <div class="left">
+    <div class="left-side">
         <h2>{{ user.username }}</h2>
 
         <!-- Profile Picture -->
-        {% if user.bio.profile_picture %}
         <div class="profile-picture">
-            <img src="{{ user.bio.profile_picture.url }}" alt="Profile Picture">
+            {% if user_bio.profile_picture %}
+                <img class="profile-img" src="{{ user_bio.profile_picture.url }}" alt="{{ user.username }}'s profile picture">
+            {% else %}
+                <img class="profile-img" src="/media/profile_pics/nobody.jpg" alt="Placeholder image">
+            {% endif %}
         </div>
     </div>
-    {% endif %}
 
     <!-- Info -->
     <div class="user-info">

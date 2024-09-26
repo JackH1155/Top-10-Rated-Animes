@@ -63,4 +63,6 @@ class UserBioForm(forms.ModelForm):
         widgets = {
             'date_of_birth': forms.SelectDateWidget(years=range(1900, 2025)),
             'bio': forms.Textarea(attrs={'rows': 4, 'cols': 40}),
+
+            profile_picture = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={'class': 'form-control'}))
         }
