@@ -42,7 +42,7 @@ body {
     position: absolute;
     bottom: 5%;
     min-width: 10%;
-    left: -2px;
+    left: 5px;
     background-color: #188181;
     text-align: center;
     border-radius: 40px;
@@ -170,7 +170,6 @@ body {
 
 }
 
-/* Signup from */
 
 .dob {
     max-width: 18%;
@@ -246,7 +245,7 @@ button.btn-primary:hover {
     border: 2px solid #188181;
 }
 
-.left {
+.left-side {
     display: flex;
     flex-direction: column;
     justify-content: center;
