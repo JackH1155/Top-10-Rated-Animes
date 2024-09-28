@@ -57,12 +57,12 @@ class CustomSignupForm(SignupForm):
 
 
 class UserBioForm(forms.ModelForm):
+    profile_picture: forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={'class': 'form-control'}))
+        
     class Meta:
         model = UserBio
         fields = ['profile_picture', 'date_of_birth', 'country', 'fav_anime', 'bio']
         widgets = {
             'date_of_birth': forms.SelectDateWidget(years=range(1900, 2025)),
             'bio': forms.Textarea(attrs={'rows': 4, 'cols': 40}),
-
-            profile_picture = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={'class': 'form-control'}))
         }
