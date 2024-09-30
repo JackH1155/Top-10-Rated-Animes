@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.core.validators import MinValueValidator, MaxValueValidator
+from decimal import Decimal
 
 # Create your models here.
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -10,10 +12,12 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
-    )
+    creator = models.CharField(max_length=100, default="Anonymous")
     rating = models.IntegerField(choices=[(i, i) for i in range(1, 13)], default=1)
+    decimal_rating = models.DecimalField(
+        max_digits=3, decimal_places=1, default=Decimal('1.0'),
+        validators=[MinValueValidator(Decimal('1.0')), MaxValueValidator(Decimal('10.0'))]
+    )
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
     created_on = models.CharField(max_length=200, default="Custom date string")
@@ -25,7 +29,7 @@ class Post(models.Model):
         ordering = ["rating"]
 
     def __str__(self):
-        return f"{self.title} | Rating: {self.rating}/12"
+        return f"{self.title} | Rating: {self.rating}/12 | Decimal Rating: {self.decimal_rating}/10.0"
 
 
 class Comment(models.Model):
