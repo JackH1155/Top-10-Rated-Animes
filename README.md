@@ -1,6 +1,6 @@
 <h1 align="center">Top 12 Anime</h1>
 
-[View the live project here]()
+[View the live project here](https://top-10-anime-f8c245cd60e9.herokuapp.com/)
 
 The project contains an application called Top 10 Anime which is a website that gives details on the top 12 rated anime of all time.
 
