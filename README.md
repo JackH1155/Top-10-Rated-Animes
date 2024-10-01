@@ -53,31 +53,29 @@ The admin user of the site can manage comments to keep the website a respectable
     
     The navigation bar is responsive on multiple screen sizes - on smaller screens it coverts to a 'burger' menu style.  
     
-    ![Navbar Full]()
-    ![Navbar Full Signed in]()
-    ![Navbar Burger]()
+    ![Navbar Full](documentation/wireframes/nav-signed-out)
+    ![Navbar Full Signed in](documentation/wireframes/nav-signed-in)
+    ![Navbar Burger](documentation/wireframes/nav-burger)
 
 
 -   __F02 Landing page image and text__
     
     At the top of the landing page (home page) there is an area that includes a photograph and a text overlay which together clearly identify the purpose of the site as a place to find and book guided hikes in Banff.  
 
-    ![Landing Area]()
+    ![Landing Area](documentation/wireframes/homepage)
 
     
 
     
 
 
-    ![ Detail]()
+    ![ Detail](documentation/wireframes/details-page)
 
 
 
-    ![Comment]()
+    ![Comment](documentation/wireframes/comments)
 
 
-
-    ![Like]()
 
 
 
@@ -224,6 +222,8 @@ Detailed below are instructions on how to clone this project repository and the 
 
 ## Credits 
 Used this README https://github.com/elainebroche-dev/pf4-wayfarers-guided-hikes/blob/main/README.md as a base skeleton for my README.
+
+Got images and details from https://www.imdb.com/search/title/?keywords=anime&sort=user_rating,desc
 
 ### Code 
 
