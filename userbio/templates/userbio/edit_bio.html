@@ -1,48 +1,89 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
 
 {% block content %}
-<div class="form-container">
-  <h1>Edit Your Bio</h1>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="mb-4 text-center">Edit Your Bio</h1>
 
-  <form class="signup" method="post" enctype="multipart/form-data">  <!-- Added enctype for file uploads -->
-    {% csrf_token %}
+      <form class="signup" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
 
-    <div class="form-group">
-      <label for="id_profile_picture" class="form-label">Profile Picture</label>
-      <div class="profile-picture-preview">
-        {% if user.userbio.profile_picture %}
-          <img src="{{ user.userbio.profile_picture.url }}" alt="Profile Picture" style="width:150px;height:150px;object-fit:cover;">
-        {% else %}
-          <img src="{{ MEDIA_URL }}profile_pics/nobody.jpg" alt="Placeholder Picture" style="width:150px;height:150px;object-fit:cover;">
-        {% endif %}
-      </div>
-      {{ form.profile_picture }}
-      {% if user.userbio.profile_picture %}
-        <button type="submit" name="remove_picture" value="1" class="btn btn-danger mt-2">Remove Picture</button>
-      {% endif %}
+        <!-- Profile Picture Upload -->
+        <div class="form-group mb-3 text-center">
+          <!-- Profile Picture Label -->
+          <div class="mb-2">
+            <label for="id_profile_picture" class="form-label d-block">Profile Picture</label>
+          </div>
+
+          <!-- Profile Picture Preview (Image) -->
+          <div class="mb-2">
+            <div class="profile-picture-preview mb-3">
+              {% if user.userbio.profile_picture %}
+                <img src="{{ user.userbio.profile_picture.url }}" alt="Profile Picture"
+                     class="img-thumbnail d-block mx-auto" style="width:150px;height:150px;object-fit:cover;">
+              {% else %}
+                <img src="{{ MEDIA_URL }}profile_pics/nobody.jpg" alt="Placeholder Picture"
+                     class="img-thumbnail d-block mx-auto" style="width:150px;height:150px;object-fit:cover;">
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Current Image Text -->
+          <div class="mb-2">
+            <p>Currently: <a href="{{ user.userbio.profile_picture.url }}" target="_blank">{{ user.userbio.profile_picture.name }}</a></p>
+          </div>
+
+          <!-- Change Picture Label -->
+          <div class="mb-2">
+            <p class="d-block">Change:</p>
+          </div>
+
+          <!-- Profile Picture Input -->
+          <div class="mb-2">
+            {{ form.profile_picture|attr:"class:form-control d-block" }}
+          </div>
+
+          <!-- Remove Picture Button (if applicable) -->
+          {% if user.userbio.profile_picture %}
+            <div class="mt-2">
+              <button type="submit" name="remove_picture" value="1" class="btn btn-danger">Remove Picture</button>
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Date of Birth Field -->
+        <div class="form-group mb-3">
+          <label for="id_date_of_birth" class="form-label">Date of Birth</label>
+          {{ form.date_of_birth|attr:"class:form-control" }}
+        </div>
+
+        <!-- Country Field -->
+        <div class="form-group mb-3">
+          <label for="id_country" class="form-label">Country</label>
+          {{ form.country|attr:"class:form-select" }}
+        </div>
+
+        <!-- Favourite Anime Field -->
+        <div class="form-group mb-3">
+          <label for="id_fav_anime" class="form-label">Favourite Anime</label>
+          {{ form.fav_anime|attr:"class:form-control" }}
+        </div>
+
+        <!-- Bio Field -->
+        <div class="form-group mb-4">
+          <label for="id_bio" class="form-label">Bio</label>
+          {{ form.bio|attr:"class:form-control" }}
+        </div>
+
+        <!-- Save Changes Button -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
+        </div>
+      </form>
     </div>
-
-    <div class="form-group">
-      <label for="id_date_of_birth" class="form-label">Date of Birth</label>
-      {{ form.date_of_birth }}
-    </div>
-
-    <div class="form-group">
-      <label for="id_country" class="form-label">Country</label>
-      {{ form.country }}
-    </div>
-
-    <div class="form-group">
-      <label for="id_fav_anime" class="form-label">Favourite Anime</label>
-      {{ form.fav_anime }}
-    </div>
-
-    <div class="form-group">
-      <label for="id_bio" class="form-label">Bio</label>
-      {{ form.bio }}
-    </div>
-
-    <button type="submit" class="btn btn-primary">Save Changes</button>
-  </form>
+  </div>
 </div>
 {% endblock %}

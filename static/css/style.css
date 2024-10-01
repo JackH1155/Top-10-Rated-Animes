@@ -285,18 +285,31 @@ button.btn-primary:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-
 .details {
-    margin: 20px;
-    padding: 20px;
     display: flex;
-    align-items: flex-start;
-    max-height: 600px;
-    max-width: 80%;
+    flex-direction: column;
+    padding: 20px;
     background-color: #e2e2e2;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 1200px;
+}
+
+.anime-picture {
+    margin-bottom: 20px;
+    text-align: center; /* Centers image on small screens */
+}
+
+.anime-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info-text {
+    flex: 1;
 }
 
 .detail-title,
@@ -308,24 +321,9 @@ button.btn-primary:hover {
     margin-bottom: 20px;
 }
 
-.anime-picture {
-    margin-right: 20px;
-}
-
-.anime-img {
-    width: 300px;
-    height: auto;
-
-}
-
-.info-text {
-
-    flex: 1;
-}
-
 .detail-decimal-rating,
 .detail-creator,
-.detail-release-date, {
+.detail-release-date {
     font-size: 1.2em;
     margin-bottom: 10px;
 }
@@ -334,3 +332,4 @@ button.btn-primary:hover {
     margin-top: 20px;
     font-size: 1.1em;
 }
+

@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-jackh1155-top10ratedani-oehoeg68a47.ws.codeinstitute-ide.net',
                 '.herokuapp.com']
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'blog',
     'userbio',
+    'widget_tweaks',
 ]
 
 SITE_ID = 1
