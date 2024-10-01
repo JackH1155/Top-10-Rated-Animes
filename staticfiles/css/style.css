@@ -166,15 +166,6 @@ body {
     margin: 2% 5%;
 }
 
-.card-body {
-
-}
-
-
-.dob {
-    max-width: 18%;
-}
-
 
 /* Form container styling */
 .form-container {
@@ -285,3 +276,60 @@ button.btn-primary:hover {
 .bio {
     height: 100px;
 }
+
+
+
+/* Details page */
+
+.details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #e2e2e2;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 1200px;
+}
+
+.anime-picture {
+    margin-bottom: 20px;
+    text-align: center; /* Centers image on small screens */
+}
+
+.anime-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info-text {
+    flex: 1;
+}
+
+.detail-title,
+.detail-decimal-rating,
+.detail-creator,
+.detail-release-date,
+.detail-description {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.detail-decimal-rating,
+.detail-creator,
+.detail-release-date {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.detail-description {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
