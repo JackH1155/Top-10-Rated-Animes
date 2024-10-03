@@ -2,7 +2,7 @@
 
 [View the live project here](https://top-10-anime-f8c245cd60e9.herokuapp.com/)
 
-The project contains an application called Top 10 Anime which is a website that gives details on the top 12 rated anime of all time.
+The project contains an application called Top 12 Anime which is a website that gives details on the top 12 rated anime of all time.
 
 The admin user of the site can manage comments to keep the website a respectable and harmfree place
 
@@ -39,7 +39,8 @@ The admin user of the site can manage comments to keep the website a respectable
 * US08: Like/Dislike Anime
   - As a logged-in user, I want to like or dislike an anime and other users' comments, so I can engage with the community.
 
-
+## Project board
+[Project board](https://github.com/users/JackH1155/projects/2/views/1)
 
 ## Features
 
