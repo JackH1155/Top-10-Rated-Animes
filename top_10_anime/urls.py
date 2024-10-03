@@ -24,6 +24,7 @@ urlpatterns = [
     path('bio/<str:username>/', views.user_bio_view, name='user_bio'),
     path('edit-bio/', views.edit_user_bio, name='edit_user_bio'),
     path('delete-profile-picture/', views.delete_profile_picture, name='delete_profile_picture'),
+    path('delete-user/', views.delete_user, name='delete_user'),
     path('admin/', admin.site.urls),
     path('', include("blog.urls")),
     path("accounts/", include("allauth.urls")),

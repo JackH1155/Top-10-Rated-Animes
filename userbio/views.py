@@ -49,3 +49,13 @@ def delete_profile_picture(request):
 
     return render(request, 'delete_profile_picture.html', {'profile': user_bio})
 
+
+@login_required
+def delete_user(request):
+    if request.method == 'POST':
+        # Delete the user and redirect to a different page, such as home
+        user = request.user
+        user.delete()
+        return redirect('home')  # Redirect to home after account deletion
+
+    return redirect('edit_bio')  # If not POST, redirect back to edit bio

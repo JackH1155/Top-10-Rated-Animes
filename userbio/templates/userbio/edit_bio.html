@@ -7,7 +7,7 @@
 <div class="container my-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <h1 class="mb-4 text-center">Edit Your Bio</h1>
+      <h1 class="mb-4 text-center">Edit Your Profile</h1>
 
       <form class="signup" method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -75,31 +75,42 @@
           <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
         </div>
       </form>
+
+      <!-- Delete User Button -->
+      <div class="text-center mt-4">
+        <!-- Button that triggers the delete user confirmation modal -->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
+          Delete Account
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Modal for delete confirmation -->
-<div class="modal fade" id="deleteProfilePictureModal" tabindex="-1" aria-labelledby="deleteProfilePictureLabel" aria-hidden="true">
+<!-- Delete User Confirmation Modal -->
+<div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteProfilePictureLabel">Delete Profile Picture</h5>
+        <h5 class="modal-title" id="deleteUserModalLabel">Delete Account</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Are you sure you want to delete your profile picture? This action cannot be undone.
+        <p>Are you sure you want to delete your account? This action cannot be undone.</p>
       </div>
       <div class="modal-footer">
-        <form method="POST" action="{% url 'delete_profile_picture' %}">
+        <!-- Form to delete user -->
+        <form method="post" action="{% url 'delete_user' %}">
           {% csrf_token %}
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-danger">Delete Account</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+
 
 <!-- Script to handle image preview -->
 <script>
