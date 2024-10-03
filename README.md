@@ -86,7 +86,7 @@ The admin user of the site can manage comments to keep the website a respectable
     - User Registration
       - A user needs to be registered before they can sign in.  The option to Register appears on the navigation bar when no user is currently signed in.  To Register, the user needs to provide a) a username which has not already been registered, b) an optional email address (if this is provided then it needs to be an email address that is not already registered) and c) a password which they must enter twice.  Once registered a user can sign in.
 
-        ![Register User]()
+        ![Register User](documentation/webpages/signup.png)
 
     - User Sign in
       - Once registered a user can sign in and will have access to extra functionality, namely :
@@ -95,12 +95,12 @@ The admin user of the site can manage comments to keep the website a respectable
 
       - To sign in the user must provide a) a registered username and b) the password for the username
      
-        ![Sign in User]()
+        ![Sign in User](documentation/webpages/signin.png)
       
     - User Sign out
       - A signed in user can sign out by clicking on the Sign out link on the navigation bar.  The user simply needs to confirm the action by clicking on the Sign out button on the page.
 
-        ![Sign out User]()
+        ![Sign out User](documentation/webpages/signout.png)
 
 
 
