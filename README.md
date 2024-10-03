@@ -53,27 +53,27 @@ The admin user of the site can manage comments to keep the website a respectable
     
     The navigation bar is responsive on multiple screen sizes - on smaller screens it coverts to a 'burger' menu style.  
     
-    ![Navbar Full](documentation/webpages/nav-signed-out)
-    ![Navbar Full Signed in](documentation/webpages/nav-signed-in)
-    ![Navbar Burger](documentation/webpages/nav-burger)
+    ![Navbar Full](documentation/webpages/nav-signed-out.png)
+    ![Navbar Full Signed in](documentation/webpages/nav-signed-in.png)
+    ![Navbar Burger](documentation/webpages/nav-burger.png)
 
 
 -   __F02 Landing page image and text__
     
     At the top of the landing page (home page) there is an area that includes a photograph and a text overlay which together clearly identify the purpose of the site as a place to find and book guided hikes in Banff.  
 
-    ![Landing Area](documentation/webpages/homepage)
+    ![Landing Area](documentation/webpages/homepage.png)
 
     
 
     
 
 
-    ![ Detail](documentation/webpages/details-page)
+    ![ Detail](documentation/webpages/details-page.png)
 
 
 
-    ![Comment](documentation/webpages/comments)
+    ![Comment](documentation/webpages/comments.png)
 
 
 
