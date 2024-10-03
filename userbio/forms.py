@@ -56,8 +56,21 @@ class CustomSignupForm(SignupForm):
         return user
 
 
+from django import forms
+from .models import UserBio
+
 class UserBioForm(forms.ModelForm):
-    profile_picture = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={'class': 'form-control'}))
+    # Customizing the ImageField widget to remove "currently" file name
+    profile_picture = forms.ImageField(
+        required=False,
+        widget=forms.ClearableFileInput(attrs={
+            'class': 'form-control', 
+            'style': 'max-width: 250px;', 
+            'initial-text': '',  # Removes the "Currently" text
+            'input-text': 'Change',  # Text for "Choose file"
+            'clearable': False,  # Optional: to disable "Clear" checkbox if needed
+        })
+    )
 
     class Meta:
         model = UserBio

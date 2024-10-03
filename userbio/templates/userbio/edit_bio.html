@@ -13,33 +13,26 @@
         {% csrf_token %}
 
         <!-- Profile Picture Upload -->
-        <div class="form-group mb-3 text-center">
-          <!-- Profile Picture Label -->
-          <div class="mb-2">
+        <div class="text-center">
+          <div class="mb-3">
+            <!-- Profile Picture Label -->
             <label for="id_profile_picture" class="form-label d-block">Profile Picture</label>
           </div>
 
           <!-- Profile Picture Preview (Image) -->
-          <div class="mb-2">
-            <div class="profile-picture-preview mb-3">
+          <div class="mb-3">
+            <div class="profile-picture-preview">
               {% if user.userbio.profile_picture %}
-                <!-- Add id="profile-img-preview" here -->
-                <img id="profile-img-preview" src="{{ user.userbio.profile_picture.url }}" alt="Profile Picture" class="img-thumbnail d-block mx-auto">
+                <img id="profile-img-preview" src="{{ user.userbio.profile_picture.url }}" alt="Profile Picture" class="img-thumbnail img-fluid" style="max-width: 150px;">
               {% else %}
-                <!-- Add id="profile-img-preview" here too for default image -->
-                <img id="profile-img-preview" src="{% static 'images/nobody.jpg' %}" alt="Default Profile Picture" class="img-thumbnail d-block mx-auto">
+                <img id="profile-img-preview" src="{% static 'images/nobody.jpg' %}" alt="Default Profile Picture" class="img-thumbnail img-fluid" style="max-width: 150px;">
               {% endif %}
             </div>
           </div>
 
-          <!-- Change Picture Label -->
-          <div class="mb-2">
-            <p class="d-block">Change:</p>
-          </div>
-
-          <!-- Profile Picture Input -->
-          <div class="mb-2">
-            {{ form.profile_picture|attr:"class:form-control d-block" }}
+          <!-- Change Picture Input -->
+          <div class="change-image mb-2">
+            {{ form.profile_picture|attr:"class:form-control form-control-sm d-block mx-auto"|attr:"style:max-width: 250px;" }}
           </div>
 
           <!-- Remove Picture Button (if applicable) -->
@@ -54,32 +47,32 @@
         </div>
 
         <!-- Date of Birth Field -->
-        <div class="form-group mb-3">
+        <div class="form-group mb-2">
           <label for="id_date_of_birth" class="form-label">Date of Birth</label>
-          {{ form.date_of_birth|attr:"class:form-control" }}
+          {{ form.date_of_birth|attr:"class:form-control form-control-sm" }}
         </div>
 
         <!-- Country Field -->
-        <div class="form-group mb-3">
+        <div class="form-group mb-2">
           <label for="id_country" class="form-label">Country</label>
-          {{ form.country|attr:"class:form-select" }}
+          {{ form.country|attr:"class:form-select form-select-sm" }}
         </div>
 
         <!-- Favourite Anime Field -->
-        <div class="form-group mb-3">
+        <div class="form-group mb-2">
           <label for="id_fav_anime" class="form-label">Favourite Anime</label>
-          {{ form.fav_anime|attr:"class:form-control" }}
+          {{ form.fav_anime|attr:"class:form-control form-control-sm" }}
         </div>
 
         <!-- Bio Field -->
-        <div class="form-group mb-4">
+        <div class="form-group mb-3">
           <label for="id_bio" class="form-label">Bio</label>
-          {{ form.bio|attr:"class:form-control" }}
+          {{ form.bio|attr:"class:form-control form-control-sm" }}
         </div>
 
         <!-- Save Changes Button -->
         <div class="text-center">
-          <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
+          <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
         </div>
       </form>
     </div>
@@ -100,8 +93,8 @@
       <div class="modal-footer">
         <form method="POST" action="{% url 'delete_profile_picture' %}">
           {% csrf_token %}
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-danger">Delete</button>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-danger btn-sm">Delete</button>
         </form>
       </div>
     </div>
@@ -116,7 +109,6 @@
           var reader = new FileReader();
 
           reader.onload = function(e) {
-              // Reference to the correct preview image
               var preview = document.getElementById("profile-img-preview");
               preview.src = e.target.result;
           }

@@ -255,7 +255,8 @@ button.btn-primary:hover {
     font-size: 3rem;
 }
 
-.profile-picture img {
+.profile-picture img,
+.profile-img-preview {
     width: 300px;
     height: 300px;
     border-radius: 50%;

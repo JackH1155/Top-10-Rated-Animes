@@ -1,4 +1,3 @@
-<!-- Example in userbio/user_bio.html -->
 {% extends 'base.html' %}
 {% load static %}
 
@@ -7,48 +6,58 @@
 {% endblock %}
 
 {% block content %}
-<div class="user-profile">
-    <div class="left-side">
-        <h2>{{ user.username }}</h2>
+<div class="container mt-5">
+    <div class="row">
+        <!-- Profile Section -->
+        <div class="col-md-4 text-center">
+            <h2>{{ user.username }}</h2>
 
-        <!-- Profile Picture -->
-        <div class="profile-picture">
-            {% if user_bio.profile_picture %}
-                <img class="profile-img" src="{{ user_bio.profile_picture.url }}" alt="{{ user.username }}'s profile picture">
-            {% else %}
-                <!-- Default "nobody" image when no profile picture is set -->
-                <img class="profile-img" src="{% static 'images/nobody.jpg' %}" alt="Placeholder image">
-            {% endif %}
+            <!-- Profile Picture -->
+            <div class="profile-picture mb-3">
+                {% if user_bio.profile_picture %}
+                    <img class="img-fluid rounded-circle profile-img" src="{{ user_bio.profile_picture.url }}" alt="{{ user.username }}'s profile picture">
+                {% else %}
+                    <!-- Default "nobody" image when no profile picture is set -->
+                    <img class="img-fluid rounded-circle profile-img" src="{% static 'images/nobody.jpg' %}" alt="Placeholder image">
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- User Info Section -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    {% if user_bio.date_of_birth %}
+                    <p class="title"><strong>Date of Birth:</strong></p>
+                    <p class="text">{{ user_bio.date_of_birth }}</p>
+                    {% endif %}
+
+                    {% if user_bio.country %}
+                    <p class="title"><strong>Country:</strong></p>
+                    <p class="text">{{ user_bio.country }}</p>
+                    {% endif %}
+
+                    {% if user_bio.fav_anime %}
+                    <p class="title"><strong>Favourite Anime:</strong></p>
+                    <p class="text">{{ user_bio.fav_anime }}</p>
+                    {% endif %}
+
+                    {% if user_bio.bio %}
+                    <p class="title"><strong>Bio:</strong></p>
+                    <p class="text bio">{{ user_bio.bio }}</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Info -->
-    <div class="user-info">
-        {% if user_bio.date_of_birth %}
-        <p class="title"><strong>Date of Birth:</strong></p>
-        <p class="text">{{ user_bio.date_of_birth }}</p>
-        {% endif %}
-
-        {% if user_bio.country %}
-        <p class="title"><strong>Country:</strong></p>
-        <p class="text">{{ user_bio.country }}</p>
-        {% endif %}
-
-        {% if user_bio.fav_anime %}
-        <p class="title"><strong>Favourite Anime:</strong></p>
-        <p class="text">{{ user_bio.fav_anime }}</p>
-        {% endif %}
-
-        {% if user_bio.bio %}
-        <p class="title"><strong>Bio:</strong></p>
-        <p class="text bio">{{ user_bio.bio }}</p>
-        {% endif %}
-    </div>
-    
-    <div class="edit-bio">
-        {% if request.user == user %}
-        <a href="{% url 'edit_user_bio' %}">Edit Your Bio</a>
-        {% endif %}
+    <!-- Edit Bio Section -->
+    <div class="row mt-3">
+        <div class="col-md-12 text-center">
+            {% if request.user == user %}
+            <a href="{% url 'edit_user_bio' %}" class="btn btn-primary">Edit Your Bio</a>
+            {% endif %}
+        </div>
     </div>
 </div>
 {% endblock %}
