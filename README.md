@@ -226,6 +226,10 @@ Used this README https://github.com/elainebroche-dev/pf4-wayfarers-guided-hikes/
 
 Got images and details from https://www.imdb.com/search/title/?keywords=anime&sort=user_rating,desc
 
+Some of the code is from the CodeStar blog walkthrough. I changed it a little to fit into my project.
+
+I have used ChatGPT to help with some issues and some code stucture.
+
 ### Code 
 
 
