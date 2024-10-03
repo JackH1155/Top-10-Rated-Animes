@@ -15,3 +15,12 @@ class UserBio(models.Model):
 
     def __str__(self):
         return f"{self.user.username}'s Bio"
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_picture = CloudinaryField('image', default='default_image_url')
+
+    def reset_profile_picture(self):
+        self.profile_picture = 'default_image_url'  # Set this to your default image path
+        self.save()

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load widget_tweaks %}
+{% load static %}
 
 {% block content %}
 <div class="container my-5">
@@ -22,18 +23,13 @@
           <div class="mb-2">
             <div class="profile-picture-preview mb-3">
               {% if user.userbio.profile_picture %}
-                <img src="{{ user.userbio.profile_picture.url }}" alt="Profile Picture"
-                     class="img-thumbnail d-block mx-auto" style="width:150px;height:150px;object-fit:cover;">
+                <!-- Add id="profile-img-preview" here -->
+                <img id="profile-img-preview" src="{{ user.userbio.profile_picture.url }}" alt="Profile Picture" class="img-thumbnail d-block mx-auto">
               {% else %}
-                <img src="{{ MEDIA_URL }}profile_pics/nobody.jpg" alt="Placeholder Picture"
-                     class="img-thumbnail d-block mx-auto" style="width:150px;height:150px;object-fit:cover;">
+                <!-- Add id="profile-img-preview" here too for default image -->
+                <img id="profile-img-preview" src="{% static 'images/nobody.jpg' %}" alt="Default Profile Picture" class="img-thumbnail d-block mx-auto">
               {% endif %}
             </div>
-          </div>
-
-          <!-- Current Image Text -->
-          <div class="mb-2">
-            <p>Currently: <a href="{{ user.userbio.profile_picture.url }}" target="_blank">{{ user.userbio.profile_picture.name }}</a></p>
           </div>
 
           <!-- Change Picture Label -->
@@ -49,7 +45,10 @@
           <!-- Remove Picture Button (if applicable) -->
           {% if user.userbio.profile_picture %}
             <div class="mt-2">
-              <button type="submit" name="remove_picture" value="1" class="btn btn-danger">Remove Picture</button>
+              <!-- Button that triggers the confirmation modal -->
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProfilePictureModal">
+                Remove Picture
+              </button>
             </div>
           {% endif %}
         </div>
@@ -86,4 +85,45 @@
     </div>
   </div>
 </div>
+
+<!-- Modal for delete confirmation -->
+<div class="modal fade" id="deleteProfilePictureModal" tabindex="-1" aria-labelledby="deleteProfilePictureLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteProfilePictureLabel">Delete Profile Picture</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete your profile picture? This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        <form method="POST" action="{% url 'delete_profile_picture' %}">
+          {% csrf_token %}
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script to handle image preview -->
+<script>
+  document.getElementById("id_profile_picture").addEventListener("change", function(event) {
+      var input = event.target;
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function(e) {
+              // Reference to the correct preview image
+              var preview = document.getElementById("profile-img-preview");
+              preview.src = e.target.result;
+          }
+
+          reader.readAsDataURL(input.files[0]); // Read the uploaded file and trigger onload
+      }
+  });
+</script>
+
 {% endblock %}

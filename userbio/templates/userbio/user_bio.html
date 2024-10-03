@@ -1,3 +1,4 @@
+<!-- Example in userbio/user_bio.html -->
 {% extends 'base.html' %}
 {% load static %}
 
@@ -15,6 +16,7 @@
             {% if user_bio.profile_picture %}
                 <img class="profile-img" src="{{ user_bio.profile_picture.url }}" alt="{{ user.username }}'s profile picture">
             {% else %}
+                <!-- Default "nobody" image when no profile picture is set -->
                 <img class="profile-img" src="{% static 'images/nobody.jpg' %}" alt="Placeholder image">
             {% endif %}
         </div>
@@ -22,26 +24,27 @@
 
     <!-- Info -->
     <div class="user-info">
-        {% if user.bio.date_of_birth %}
+        {% if user_bio.date_of_birth %}
         <p class="title"><strong>Date of Birth:</strong></p>
-        <p class="text">{{ user.bio.date_of_birth }}</p>
+        <p class="text">{{ user_bio.date_of_birth }}</p>
         {% endif %}
 
-        {% if user.bio.country %}
+        {% if user_bio.country %}
         <p class="title"><strong>Country:</strong></p>
-        <p class="text">{{ user.bio.country }}</p>
+        <p class="text">{{ user_bio.country }}</p>
         {% endif %}
 
-        {% if user.bio.fav_anime %}
+        {% if user_bio.fav_anime %}
         <p class="title"><strong>Favourite Anime:</strong></p>
-        <p class="text">{{ user.bio.fav_anime }}</p>
+        <p class="text">{{ user_bio.fav_anime }}</p>
         {% endif %}
 
-        {% if user.bio.bio %}
+        {% if user_bio.bio %}
         <p class="title"><strong>Bio:</strong></p>
-        <p class="text bio">{{ user.bio.bio }}</p>
+        <p class="text bio">{{ user_bio.bio }}</p>
         {% endif %}
     </div>
+    
     <div class="edit-bio">
         {% if request.user == user %}
         <a href="{% url 'edit_user_bio' %}">Edit Your Bio</a>

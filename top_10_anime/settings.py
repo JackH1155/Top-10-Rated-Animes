@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-jackh1155-top10ratedani-oehoeg68a47.ws.codeinstitute-ide.net',
                 '.herokuapp.com']
@@ -167,6 +167,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Media settings for file uploads
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+# Cloudinary configuration
+cloudinary.config(
+    cloudinary_url=os.environ.get("CLOUDINARY_URL")
+)
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 
 # Default primary key field type

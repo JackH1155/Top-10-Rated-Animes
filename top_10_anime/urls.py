@@ -23,11 +23,12 @@ from userbio import views
 urlpatterns = [
     path('bio/<str:username>/', views.user_bio_view, name='user_bio'),
     path('edit-bio/', views.edit_user_bio, name='edit_user_bio'),
+    path('delete-profile-picture/', views.delete_profile_picture, name='delete_profile_picture'),
     path('admin/', admin.site.urls),
     path('', include("blog.urls")),
     path("accounts/", include("allauth.urls")),
     path('summernote/', include('django_summernote.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 if settings.DEBUG:
