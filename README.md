@@ -217,61 +217,72 @@ The Epic, User Stories and Kanban board can be accessed here : [Project board](h
 
 - [Python Validator]([http://pep8online.com/](https://pep8ci.herokuapp.com/))
 
+  <details>
+    <summary>Top 10 Anime urls.py validation results</summary>
+
+    ![Top 10 Anime urls.py](documentation/testing/top_10_anime-urls.png)
+  </details>
+
 <details>
-    <summary>top_10_anime urls.py validation results</summary>
+    <summary>Project settings.py validation results</summary>
+  
+  ![Project settings.py](documentation/testing/settings-test.png)
+</details>
 
-    ![Project urls.py](documentation/testing/top_10_anime-urls.png)
-  </details>
-  <details>
-    <summary>project settings.py validation results</summary>
+<details>
+    <summary>Blog urls.py validation results</summary>
+  
+   ![Blog urls.py](documentation/testing/blog-urls.png)
+</details>
 
-    ![Project settings.py](documentation/testing/settings-test.png)
-  </details>
-  <details>
-    <summary>blog urls.py validation results</summary>
+<details>
+    <summary>Blog admin.py validation results</summary>
+  
+   ![Blog admin.py](documentation/testing/blog-admin.png)
+</details>
 
-    ![Application urls.py](documentation/testing/blog-urls.png)
-  </details>
-  <details>
-    <summary>blog admin.py validation results</summary>
+<details>
+    <summary>Blog forms.py validation results</summary>
+  
+   ![Blog forms.py](documentation/testing/blog-forms.png)
+</details>
 
-    ![admin.py](documentation/testing/blog-admin.png)
-  </details>
-  <details>
-    <summary>blog forms.py validation results</summary>
+<details>
+    <summary>Blog models.py validation results</summary>
+  
+   ![Blog models.py](documentation/testing/blog-models.png)
+</details>
 
-    ![forms.py](documentation/testing/blog-forms.png)
-  </details>
-  <details>
-    <summary>blog models.py validation results</summary>
+<details>
+    <summary>Blog views.py validation results</summary>
+  
+  ![Blog views.py](documentation/testing/blog-views.png)
+</details>
 
-    ![models.py](documentation/testing/blog-models.png)
-  </details>
-  <details>
-    <summary>blog views.py validation results</summary>
+<details>
+    <summary>UserBio admin.py validation results</summary>
+  
+  ![UserBio admin.py](documentation/testing/userbio-admin.png)
+</details>
 
-    ![views.py](documentation/testing/blog-views.png)
-  </details>
-  <details>
-    <summary>userbio admin.py validation results</summary>
+<details>
+    <summary>UserBio forms.py validation results</summary>
+  
+  ![UserBio forms.py](documentation/testing/userbio-forms.png)
+</details>
 
-    ![test_admin.py](documentation/testing/userbio-admin.png)
-  </details>
-  <details>
-    <summary> userbio forms.py validation results</summary>
+<details>
+    <summary>UserBio models.py validation results</summary>
+  
+  ![UserBio models.py](documentation/testing/userbio-models.png)
+</details>
 
-    ![test_forms.py](documentation/testing/userbio-forms.png)
-  </details>
-  <details>
-    <summary>userbio models.py validation results</summary>
+<details>
+    <summary>UserBio views.py validation results</summary>
+  
+  ![UserBio views.py](documentation/testing/userbio-views.png)
+</details>
 
-    ![test_models.py](documentation/testing/userbio-models.png)
-  </details>
-  <details>
-    <summary>userbio views.py validation results</summary>
-
-    ![test_views.py](documentation/testing/userbio-views.png)
-  </details>
 
 
 
