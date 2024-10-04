@@ -218,7 +218,7 @@ The Epic, User Stories and Kanban board can be accessed here : [Project board](h
       </details>
 
 
-- [Python Validator]([http://pep8online.com/](https://pep8ci.herokuapp.com/))
+- [Python Validator](https://pep8ci.herokuapp.com/)
 
   <details>
     <summary>Top 10 Anime urls.py validation results</summary>
