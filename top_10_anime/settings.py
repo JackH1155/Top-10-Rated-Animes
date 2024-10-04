@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-jackh1155-top10ratedani-oehoeg68a47.ws.codeinstitute-ide.net',
-                '.herokuapp.com']
+                 '.herokuapp.com']
 
 
 # Application definition
@@ -175,7 +175,6 @@ cloudinary.config(
 )
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 
 
 # Default primary key field type

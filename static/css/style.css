@@ -31,7 +31,19 @@ body {
 
 .card {
     border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
     background-color: transparent;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-title {
+    font-size: 1.8rem;
 }
 
 .image-container {
@@ -42,10 +54,10 @@ body {
     position: absolute;
     bottom: 5%;
     min-width: 10%;
-    left: 5px;
+    left: 10px;
     background-color: #188181;
     text-align: center;
-    border-radius: 40px;
+    border-radius: 50px;
 }
 
 .scale {
