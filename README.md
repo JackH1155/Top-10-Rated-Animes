@@ -39,8 +39,6 @@ The admin user of the site can manage comments to keep the website a respectable
 * US08: Like/Dislike Anime
   - As a logged-in user, I want to like or dislike an anime and other users' comments, so I can engage with the community.
 
-## Project board
-[Project board](https://github.com/users/JackH1155/projects/2/views/1)
 
 ## Features
 
@@ -141,7 +139,7 @@ The admin user of the site can manage comments to keep the website a respectable
 
 A GitHub Project with linked Issues was used as the Agile tool for this project.  User Stories with acceptance criteria were defined using GitHub Issues and development of code for these stories was managed using a Kanban board.  All of the User Stories were linked to a 'parent' Epic issue to show how they all supported the over-arching goal of the project.  The acceptance criteria were tested as each story moved to 'Done' and were also included in the final pre-submission manual testing documented in the Testing section of this README.
 
-The Epic, User Stories and Kanban board can be accessed here : [)
+The Epic, User Stories and Kanban board can be accessed here : [Project board](https://github.com/users/JackH1155/projects/2/views/1)
 
 
 ## Technologies Used
@@ -159,20 +157,138 @@ The Epic, User Stories and Kanban board can be accessed here : [)
 
 ### Validator Testing 
 
+- [HTML Validator](https://validator.w3.org/)
+
+- results for index.html
+      - <details>
+        <summary>Homepage
+
+        ![Homepage](documentation/testing/homepage-test.png)
+      </details>
+- results for post_details.html
+      - <details>
+        <summary>Anime Details
+
+        ![Anime Details](documentation/testing/details-test.png)
+      </details>
+
+- results for user_bio.html
+      - <details>
+        <summary>User Profile
+
+        ![User Profile](documentation/testing/userbio-test.png)
+      </details>
+
+- results for edit_bio.html
+      - <details>
+        <summary>Edit Profile
+
+        ![Edit Profile](documentation/testing/editbio-test.png)
+      </details>
+
+- results for signup.html
+      - <details>
+        <summary>Signup
+
+        ![Signup](documentation/testing/signup-test.png)
+      </details>
+
+- results for login.html
+      - <details>
+        <summary>Login
+
+        ![Login](documentation/testing/login-test.png)
+      </details>
+
+- results for signout.html
+      - <details>
+        <summary>Logout
+
+        ![Logout](documentation/testing/logout-test.png)
+      </details>
+
+- [CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+ - <details>
+      <summary>style.css validation results</summary>
+
+      ![style.css](documentation/testing/comments-jshint.png)
+      </details>
+
+- [Python Validator]([http://pep8online.com/](https://pep8ci.herokuapp.com/))
+
+<details>
+    <summary>top_10_anime urls.py validation results</summary>
+
+    ![Project urls.py](documentation/testing/top_10_anime-urls.png)
+  </details>
+  <details>
+    <summary>project settings.py validation results</summary>
+
+    ![Project settings.py](documentation/testing/settings-test.png)
+  </details>
+  <details>
+    <summary>blog urls.py validation results</summary>
+
+    ![Application urls.py](documentation/testing/blog-urls.png)
+  </details>
+  <details>
+    <summary>blog admin.py validation results</summary>
+
+    ![admin.py](documentation/testing/blog-admin.png)
+  </details>
+  <details>
+    <summary>blog forms.py validation results</summary>
+
+    ![forms.py](documentation/testing/blog-forms.png)
+  </details>
+  <details>
+    <summary>blog models.py validation results</summary>
+
+    ![models.py](documentation/testing/blog-models.png)
+  </details>
+  <details>
+    <summary>blog views.py validation results</summary>
+
+    ![views.py](documentation/testing/blog-views.png)
+  </details>
+  <details>
+    <summary>userbio admin.py validation results</summary>
+
+    ![test_admin.py](documentation/testing/userbio-admin.png)
+  </details>
+  <details>
+    <summary> userbio forms.py validation results</summary>
+
+    ![test_forms.py](documentation/testing/userbio-forms.png)
+  </details>
+  <details>
+    <summary>userbio models.py validation results</summary>
+
+    ![test_models.py](documentation/testing/userbio-models.png)
+  </details>
+  <details>
+    <summary>userbio views.py validation results</summary>
+
+    ![test_views.py](documentation/testing/userbio-views.png)
+  </details>
+
+
 
 
 ### Browser Compatibility
 
 - Chrome DevTools was used to test the responsiveness of the application on different screen sizes.  In addition, testing has been carried out on the following browsers :
     - Google Chrome version
-    - Firefox version 93.0
+    - Opera
     - Microsoft Edge
- 
+
     
 
 ### Known bugs
 
-- Currently no known bugs.
+- Some images on homepage are to small.
+- Profile default image doesn't load.
 
 ## Deployment
 
@@ -226,15 +342,17 @@ Used this README https://github.com/elainebroche-dev/pf4-wayfarers-guided-hikes/
 
 Got images and details from https://www.imdb.com/search/title/?keywords=anime&sort=user_rating,desc
 
+
+### Code 
+
 Some of the code is from the CodeStar blog walkthrough. I changed it a little to fit into my project.
 
 I have used ChatGPT to help with some issues and some code stucture.
 
-### Code 
-
 
 ### Content 
 
+Imformation on the top 12 rated Anime.
 
 ### Media 
 
