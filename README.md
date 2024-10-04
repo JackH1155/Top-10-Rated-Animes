@@ -160,52 +160,54 @@ The Epic, User Stories and Kanban board can be accessed here : [Project board](h
 - [HTML Validator](https://validator.w3.org/)
 
 - results for index.html
-      - <details>
-        <summary>Homepage
+  - <details>
+    <summary>Homepage</summary>
 
-        ![Homepage](documentation/testing/homepage-test.png)
-      </details>
+    ![Homepage](documentation/testing/homepage-test.png)
+  </details>
+
 - results for post_details.html
-      - <details>
-        <summary>Anime Details
+  - <details>
+    <summary>Anime Details</summary>
 
-        ![Anime Details](documentation/testing/details-test.png)
-      </details>
+    ![Anime Details](documentation/testing/details-test.png)
+  </details>
 
 - results for user_bio.html
-      - <details>
-        <summary>User Profile
+  - <details>
+    <summary>User Profile</summary>
 
-        ![User Profile](documentation/testing/userbio-test.png)
-      </details>
+    ![User Profile](documentation/testing/userbio-test.png)
+  </details>
 
 - results for edit_bio.html
-      - <details>
-        <summary>Edit Profile
+  - <details>
+    <summary>Edit Profile</summary>
 
-        ![Edit Profile](documentation/testing/editbio-test.png)
-      </details>
+    ![Edit Profile](documentation/testing/editbio-test.png)
+  </details>
 
 - results for signup.html
-      - <details>
-        <summary>Signup
+  - <details>
+    <summary>Signup</summary>
 
-        ![Signup](documentation/testing/signup-test.png)
-      </details>
+    ![Signup](documentation/testing/signup-test.png)
+  </details>
 
 - results for login.html
-      - <details>
-        <summary>Login
+  - <details>
+    <summary>Login</summary>
 
-        ![Login](documentation/testing/login-test.png)
-      </details>
+    ![Login](documentation/testing/login-test.png)
+  </details>
 
 - results for signout.html
-      - <details>
-        <summary>Logout
+  - <details>
+    <summary>Logout</summary>
 
-        ![Logout](documentation/testing/logout-test.png)
-      </details>
+    ![Logout](documentation/testing/logout-test.png)
+  </details>
+
 
 - [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
@@ -214,6 +216,7 @@ The Epic, User Stories and Kanban board can be accessed here : [Project board](h
 
       ![style.css](documentation/testing/comments-jshint.png)
       </details>
+
 
 - [Python Validator]([http://pep8online.com/](https://pep8ci.herokuapp.com/))
 
