@@ -156,8 +156,6 @@ The Epic, User Stories and Kanban board can be accessed here : [Project board](h
 
 -[Django]
 
-## Testing
-
 ### Validator Testing 
 
 - [HTML Validator](https://validator.w3.org/)
@@ -306,17 +304,6 @@ The Epic, User Stories and Kanban board can be accessed here : [Project board](h
 
 - Some images on homepage are to small.
 - Profile default image doesn't load.
-
-## Deployment
-
-Detailed below are instructions on how to clone this project repository and the steps to configure and deploy the application.  Code Institute also provides a summary of similar process steps here : [CI Cheat Sheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
-
-1. How to Clone the Repository
-2. Create Application and Postgres DB on Heroku
-3. Configure Cloudinary to host images used by the application
-4. Connect the Heroku app to the GitHub repository
-5. Executing automated tests
-6. Final Deployment steps
 
 
 ### Create Application and Postgres DB on Heroku
