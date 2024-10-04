@@ -2,7 +2,7 @@
 
 [View the live project here](https://top-10-anime-f8c245cd60e9.herokuapp.com/)
 
-The project contains an application called Top 12 Anime which is a website that gives details on the top 12 rated anime of all time.
+The project contains an application called Top 12 Anime which is a website that gives details on the top 12 rated anime of all time. I originally had the top 10 rated animes but decided to change to the top 12 animes as I think the 3 per row looked nicer and used up a bit more whitespace without being to big.
 
 The admin user of the site can manage comments to keep the website a respectable and harmfree place
 
@@ -106,6 +106,8 @@ The admin user of the site can manage comments to keep the website a respectable
 
 ### Features which could be implemented in the future
 
+- Adding likes/dislikes to the posts and comments.
+
 
 ## Design
 
@@ -152,6 +154,7 @@ The Epic, User Stories and Kanban board can be accessed here : [Project board](h
 
 ### Frameworks, Libraries & Programs Used
 
+-[Django]
 
 ## Testing
 
@@ -342,13 +345,11 @@ Detailed below are instructions on how to clone this project repository and the 
 - Select GitHub as the Deployment Method and if prompted, confirm that you want to connect to GitHub. Enter the name of the github repository (the one used for this project is () and click on Connect to link up the Heroku app to the GitHub repository code.
 - Scroll down the page and choose to either Automatically Deploy each time changes are pushed to GitHub, or Manually deploy - for this project Manual Deploy was selected.
 - The application can be run from the Application Configuration page by clicking on the Open App button.
-- The live link for this project is ()
+- The live link for this project is (https://top-10-anime-f8c245cd60e9.herokuapp.com/)
 
 
-### Final Deployment steps
 
-
-#### The live link to the application can be found here - [) 
+#### The live link to the application can be found here - (https://top-10-anime-f8c245cd60e9.herokuapp.com/) 
 
 
 ## Credits 
@@ -366,12 +367,4 @@ I have used ChatGPT to help with some issues and some code stucture.
 
 ### Content 
 
-Imformation on the top 12 rated Anime.
-
-### Media 
-
-  
-  
-### Acknowledgments
-
-
+Imformation on the top 12 rated Anime and the order they are rated in.
